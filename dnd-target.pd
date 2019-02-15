@@ -136,6 +136,8 @@
 #X obj 210 75 r dnd-processed;
 #X obj 210 104 delay 1;
 #X obj 153 240 t b b b b b;
+#X obj 512 116 t b;
+#X obj 512 139 delay 1;
 #X connect 0 0 18 0;
 #X connect 1 0 6 0;
 #X connect 2 0 1 1;
@@ -154,6 +156,7 @@
 #X connect 18 1 12 1;
 #X connect 18 2 13 1;
 #X connect 18 3 14 1;
+#X connect 18 4 23 0;
 #X connect 20 0 21 0;
 #X connect 21 0 5 0;
 #X connect 22 0 19 0;
@@ -161,3 +164,5 @@
 #X connect 22 2 12 0;
 #X connect 22 3 13 0;
 #X connect 22 4 14 0;
+#X connect 23 0 24 0;
+#X connect 24 0 19 0;
