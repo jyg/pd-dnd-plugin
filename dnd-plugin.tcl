@@ -6,7 +6,8 @@
 # META AUTHOR Patrice Colet <colet.patrice@free.fr>
 # META AUTHOR Hans-Christoph Steiner <eighthave@users.sourceforge.net>
 # 2018 Modifications by Oliver Stotz and Lucas Cordiviola 
- 
+# 2019 Modifications by Jean Yves Gratius
+
 ::pdwindow::post "-\n"
 ::pdwindow::post "Drag and Drop on Window\n"
 ::pdwindow::post "Drag and Drop on Canvas\n"
@@ -137,6 +138,7 @@ proc ::dnd_object_create::send_filename {w file ext dir obj} {
 
 #------------------------------------------------------------------------------#
 # modified by oliver on 29.10.18
+# modified by jyg on 15.02.19
 
     ::pd_connect::pdsend "dnd-dropped -ext symbol $ext, -name list $obj, -path list $dir, -window-name symbol $::focused_window, -global-coords list $x $y, -drop list $posx $posy $file, rel-coords list $xrel $yrel"
 #------------------------------------------------------------------------------#
@@ -148,7 +150,8 @@ proc ::dnd_object_create::send_filename {w file ext dir obj} {
 
    ::pd_connect::pdsend "$w mouse $xrel $yrel 1 0"
    ::pd_connect::pdsend "$w mouseup $xrel $yrel 1"
-    # afterclick signal
+    
+# afterclick signal
    ::pd_connect::pdsend "dnd-dropped -done"
 
 #------------------------------------------------------------------------------#
